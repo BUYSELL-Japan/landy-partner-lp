@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="ja">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQLNC83Q');</script>
+<!-- End Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow, noarchive">
@@ -17,6 +24,10 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQLNC83Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ============================================================
   LINE友だち追加URLは4か所あります。
@@ -313,6 +324,20 @@
         el.textContent = '紹介でこのページを開いた方へ。';
       }
     } catch (e) {}
+  })();
+</script>
+<script>
+  // LINEボタンのクリックをGTMへ送る（event: line_click / cta_position: fv・flow・reward・final）
+  (function () {
+    var pos = { 'flow': 'flow', 'reward': 'reward', 'join': 'final' };
+    document.querySelectorAll('a[href*="lin.ee"]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        var sec = a.closest('section');
+        var id = sec ? sec.id : '';
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'line_click', cta_position: pos[id] || 'fv', link_url: a.href });
+      });
+    });
   })();
 </script>
 </body>
